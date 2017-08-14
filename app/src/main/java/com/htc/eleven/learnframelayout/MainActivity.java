@@ -5,45 +5,53 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView img1, img2;
-    FrameLayout root = null;
+//    ImageView img1, img2;
+//    FrameLayout root = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        img1 = (ImageView) findViewById(R.id.image1);
-        img2 = (ImageView) findViewById(R.id.image2);
-
-        root = (FrameLayout) findViewById(R.id.root);
-
-        // we could set ImageView click listener, also on root view frameLayout.
-        img1.setOnClickListener(this);
-        img2.setOnClickListener(this);
+//        img1 = (ImageView) findViewById(R.id.image1);
+//        img2 = (ImageView) findViewById(R.id.image2);
+//
+//        root = (FrameLayout) findViewById(R.id.root);
+//
+//        // we could set ImageView click listener, also on root view frameLayout.
+//        img1.setOnClickListener(this);
+//        img2.setOnClickListener(this);
 //        root.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                switchImage();
 //            }
 //        });
+
+        findViewById(R.id.sub1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "you have clicked item one !", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    private void switchImage() {
-        if(img1.getVisibility()==View.INVISIBLE) {
-            img1.setVisibility(View.VISIBLE);
-            img2.setVisibility(View.INVISIBLE);
-        }
-        else {
-            img1.setVisibility(View.INVISIBLE);
-            img2.setVisibility(View.VISIBLE);
-        }
-    }
+//    private void switchImage() {
+//        if(img1.getVisibility()==View.INVISIBLE) {
+//            img1.setVisibility(View.VISIBLE);
+//            img2.setVisibility(View.INVISIBLE);
+//        }
+//        else {
+//            img1.setVisibility(View.INVISIBLE);
+//            img2.setVisibility(View.VISIBLE);
+//        }
+//    }
 
     @Override
     public void onClick(View view) {
-        switchImage();
+//        switchImage();
     }
 }
